@@ -1,0 +1,2 @@
+class ProductRestrictionsController < ApplicationController
+end
