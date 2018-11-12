@@ -3,7 +3,7 @@
 <!--   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
   <% end %> -->
-  <p class="logo">CHOMP</p>
+  <a href="http://localhost:3000/" class="logo">CHOMP</a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -11,9 +11,16 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Host", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Trips", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+      <div class="navbar-cards">
+        <div class="row">
+          <i class="far fa-search"></i>
+        </div>
+        <div class="row">
+        <%= link_to "SEARCH", "#", class: "navbar-wagon-item navbar-wagon-link" %>
+        </div>
+
+      </div>
+<!--       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link navbar-cards" %> -->
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
@@ -40,7 +47,9 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
+      <div class="navbar-cards">
       <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+    </div>
     <% end %>
   </div>
 
