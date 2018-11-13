@@ -1,1 +1,32 @@
-// Specific CSS for your home-page
+.homecontainer {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 70px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.banner input {
+  width: 85%;
+  height: 60px;
+  border-radius: 15px;
+  border: none;
+}
+
+.banner input[type=text] {
+  font-family: 'Exo';
+  font-style: light;
+  font-size: 20px;
+  padding-left: 20px;
+  color: black;
+}
+
+.banner ::placeholder {
+  font-family: 'Exo';
+  font-style: light;
+  font-size: 20px;
+  padding-left: 20px;
+}
