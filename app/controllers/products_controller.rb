@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :set_product, only: [:validate, :show, :edit, :update]
+  before_action :set_product, only: [:validate, :show, :edit, :update, :destroy]
   def index
     @products = Product.all
   end
@@ -19,7 +19,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
-    @product.user = current_users
+    @product.user = current_user
     if @product.save
       redirect_to product_path(@product)
     else
@@ -36,6 +36,10 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @product.destroy
   end
 
   private
