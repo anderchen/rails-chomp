@@ -5,5 +5,5 @@ class Review < ApplicationRecord
   validates :user_id, presence: true
   validates :product_id, presence: true
   validates :score, presence: true
-  validates :content, presence: true
+  validates :content, length: { minimum: 20 }
 end
