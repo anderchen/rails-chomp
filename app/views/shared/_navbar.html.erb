@@ -3,7 +3,7 @@
 <!--   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
   <% end %> -->
-  <a href="http://localhost:3000/" class="logo">CHOMP</a>
+  <a href="http://localhost:3000/" class="logo infinite bounce delay-2s">CHOMP</a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
@@ -11,8 +11,8 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <div class="navbar-cards">
-        <div class="row text-center">
+      <div class="navbar-cards text-center align-items-center">
+        <div class="row">
         <i class="fa fa-search fa-2x"></i>
         </div>
         <div class="row">
@@ -48,7 +48,7 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <div class="navbar-cards">
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center" %>
     </div>
     <% end %>
   </div>
