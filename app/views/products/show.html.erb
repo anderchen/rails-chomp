@@ -3,3 +3,4 @@
 
 <%= @product.name %>
 
+<%= button_to 'Validate this', validate_product_path(@product), method: :put if current_user.admin %>

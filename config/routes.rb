@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   resources :products do
     resources :reviews, only: [:create]
+    member do
+      put :validate
+    end
   end
 
   resources :diets
+
 end
