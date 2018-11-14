@@ -1,5 +1,15 @@
 <h1>INDEX page for PRODUCTS</h1>
 
 <% @products.each do |product| %>
-  <p><%= product.name %></p>
+  <div class="card">
+    <%= render 'shared/product_image', product: product %>
+    <div class="card-category"><%= product.category %></div>
+    <div class="card-description">
+      <h2><%= product.name %></h2>
+      <p><%= product.description %></p>
+    </div>
+    <a class="card-link" href="#" ></a>
+  </div>
 <% end  %>
+
+<!-- style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(cl_image_path product.photo(height: 300, width: 400, crop: :fill) unless product.photo.blank? -->

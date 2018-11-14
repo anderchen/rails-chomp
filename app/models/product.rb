@@ -1,4 +1,6 @@
 class Product < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
+
   belongs_to :user
 
   has_many :product_restrictions, dependent: :destroy
@@ -8,4 +10,5 @@ class Product < ApplicationRecord
   validates :description, presence: true
   validates :user_id, presence: true
   validates :validation, default: false
+
 end
