@@ -16,11 +16,15 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'omniauth-facebook'
-gem "animate-rails"
+gem 'animate-rails'
 
-#admin gems
+# img upload gems
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
+
+# admin gems
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
 

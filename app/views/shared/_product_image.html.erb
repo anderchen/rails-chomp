@@ -1,0 +1,5 @@
+<% if product.photo.present? %>
+  <%= cl_image_tag product.photo, height: 300, width: 400, crop: :fit %>
+<% else %>
+  <%= image_tag 'logo.png', style: 'height: 300px; width: 400px;' %>
+<% end %>

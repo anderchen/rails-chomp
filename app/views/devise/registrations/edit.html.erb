@@ -34,12 +34,13 @@
             input_html: { autocomplete: "new-password" } %>
           </div>
         </div>
-        <%= f.input :current_password,
-        hint: "we need your current password to confirm your changes",
-        required: true,
-        input_html: { autocomplete: "current-password" } %>
-
-
+        <%= f.input :avatar %>
+        <%= f.input :avatar_cache, as: :hidden %>
+      </div>
+      <%= f.input :current_password,
+                  hint: "we need your current password to confirm your changes",
+                  required: true,
+                  input_html: { autocomplete: "current-password" } %>
         <div class="form-actions">
           <%= f.button :submit, "Update", class: "btn btn-primary" %>
         </div>
