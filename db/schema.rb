@@ -74,7 +74,7 @@ ActiveRecord::Schema.define(version: 2018_11_13_181852) do
     t.string "first_name"
     t.string "last_name"
     t.string "avatar"
-    t.boolean "admin", default: false, null: false
+    t.boolean "admin"
     t.string "provider"
     t.string "uid"
     t.index ["email"], name: "index_users_on_email", unique: true
