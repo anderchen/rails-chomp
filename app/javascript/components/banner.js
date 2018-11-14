@@ -1,0 +1,12 @@
+import Typed from 'typed.js';
+
+function loadDynamicBannerText() {
+  new Typed('#banner-typed-text', {
+    strings: ["I am alergic to water", "I don't eat popcorn", "I Love food!", ],
+    typeSpeed: 50,
+    loop: true,
+
+  });
+}
+
+export { loadDynamicBannerText };

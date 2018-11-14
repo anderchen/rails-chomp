@@ -20,6 +20,7 @@ gem 'font-awesome-rails'
 gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'animate-rails'
+gem 'rails_real_favicon'
 
 # img upload gems
 gem 'cloudinary'
