@@ -1,9 +1,9 @@
 .footer {
-  background: black;
+  background: white;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  height: 50px;
   padding: 0px 50px;
   color: white;
   text-align: center;
@@ -11,6 +11,7 @@
 .footer-links {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .footer-links p {
@@ -30,7 +31,7 @@
 }
 
 .footer p {
-  color: white;
+  color: #FF9090;
   size: 18px;
   font-family: 'EXO';
   font-weight: medium;
@@ -41,9 +42,14 @@
 }
 
 .footer .fab {
-  margin-right: 10px;
+  color: #FF9090;
+  margin-right: 2vw;
 }
 
 .footer .fab:hover {
     opacity: 0.2;
+}
+
+.footer-copyright {
+
 }
