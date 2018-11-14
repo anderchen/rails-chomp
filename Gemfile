@@ -20,6 +20,9 @@ gem "font-awesome-rails"
 gem 'omniauth-facebook'
 gem "animate-rails"
 
+#admin gems
+gem 'remotipart', github: 'mshibuya/remotipart'
+gem 'rails_admin', '>= 1.0.0.rc'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
