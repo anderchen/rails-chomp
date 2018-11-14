@@ -1,0 +1,20 @@
+// Here you generate *JavaScript* that would be executed in the browser
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  const reviews = document.getElementById('new_review');
+  reviews.insertAdjacentHTML('beforebegin', reviewHTML);
+  // document.getElementById('first_review_message').remove();
+  document.getElementById('review-count').innerHTML = "<%= pluralize @product.reviews.size, 'review' %>"
+  // Update review number
+}
+
+<% if @review.errors.any? %>
+  refreshForm('<%= j render "reviews/form", product: @product, review: @review %>');
+<% else %>
+  addReview('<%= j render "reviews/show", review: @review %>');
+  refreshForm('<%= j render "reviews/form", product: @product, review: Review.new %>');
+<% end %>

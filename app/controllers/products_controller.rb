@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
+    @review = Review.new # <-- You need this now.
   end
 
   def validate
