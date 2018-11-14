@@ -17,6 +17,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'font-awesome-rails'
+gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'animate-rails'
 
