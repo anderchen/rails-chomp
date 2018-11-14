@@ -36,11 +36,11 @@
         </div>
         <%= f.input :avatar %>
         <%= f.input :avatar_cache, as: :hidden %>
-      </div>
-      <%= f.input :current_password,
+        <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
+      </div>
         <div class="form-actions">
           <%= f.button :submit, "Update", class: "btn btn-primary" %>
         </div>
