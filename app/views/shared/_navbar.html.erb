@@ -12,13 +12,7 @@
 
       <!-- Links when logged in -->
       <div class="navbar-cards text-center align-items-center">
-        <div class="row">
         <i class="fa fa-search fa-2x"></i>
-        </div>
-        <div class="row">
-        <%= link_to "SEARCH", "#", class: "navbar-wagon-item navbar-wagon-link" %>
-        </div>
-
       </div>
 <!--       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link navbar-cards" %> -->
 
@@ -48,7 +42,7 @@
     <% else %>
       <!-- Login link (when logged out) -->
       <div class="navbar-cards">
-      <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center" %>
+      <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center navbutton" %>
     </div>
     <% end %>
   </div>
