@@ -12,6 +12,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: auto;
 }
 
 .footer-links p {
@@ -21,7 +22,7 @@
   font-size: 18px;
   padding: 0px 10px;
   font-family: 'EXO';
-  font-weight: medium;
+  font-weight: bold;
 }
 .footer-links p:hover {
   opacity: 0.2;
