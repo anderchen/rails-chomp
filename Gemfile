@@ -19,6 +19,7 @@ gem 'webpacker'
 gem 'font-awesome-rails'
 gem 'omniauth-facebook'
 gem 'animate-rails'
+gem 'rails_real_favicon'
 
 # img upload gems
 gem 'cloudinary'

@@ -2,7 +2,7 @@
   color: white;
   text-align: center;
   height: calc(100vh - 70px);
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/326279/pexels-photo-326279.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
   background-size: cover !important;
   display: flex;
   align-items: center;
@@ -56,4 +56,12 @@
   opacity: 1;
   text-decoration: none;
   color: #999999;
+}
+
+.banner h3 {
+  font-size: 65px;
+  margin-bottom: 15vh;
+  color: white;
+  font-family: 'Exo';
+  font-style: bold;
 }
