@@ -1,6 +1,14 @@
-<h1>SHOW page for PRODUCT</h1>
-<h2>/products/:id</h2>
+<h1><%= @product.name %> <small><%= @product.address %></small></h1>
+<h2>
+  <%= pluralize @product.reviews.size, "review" %>
+</h2>
 
-<%= @product.name %>
-
-<%= button_to 'Validate this', validate_product_path(@product), method: :put if current_user.admin %>
+<div id="reviews">
+  <% if @product.reviews.blank? %>
+    Be the first to leave a review for <%= @product.name %>
+  <% else %>
+    <% @product.reviews.each do |review| %>
+      <%= render 'reviews/show', review: review %>
+    <% end %>
+  <% end %>
+</div>
