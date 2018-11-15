@@ -1,10 +1,15 @@
 .usershowbody {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: url('https://images.pexels.com/photos/886521/pexels-photo-886521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: cover !important;
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - 70px - 50px);
 }
 
 .user-image {
-  height: 200px;
-  width: 200px;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: #FF9090;
+  border-width: 5px;
+
 }
