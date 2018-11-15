@@ -1,11 +1,12 @@
 <div class="container">
   <div class="row">
     <div id="reviews" class="col-xs-12 col-sm-10 col-sm-offset-1" >
-  <h1><%= @product.name %></h1>
-  <p><small><%= @product.description %></small></p>
-  <h3 id="review-count">
-    <%= pluralize @product.reviews.size, "review" %>
-  </h3>
+      <h1><%= @product.name %></h1>
+      <%= render 'shared/product_image_tag', product: @product %>
+      <p><small><%= @product.description %></small></p>
+      <h3 id="review-count">
+        <%= pluralize @product.reviews.size, "review" %>
+      </h3>
       <% if @product.reviews.blank? %>
         <p id="first_review_message">Be the first to leave a review for <%= @product.name %></p>
       <% else %>
