@@ -13,7 +13,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :brand %>
-    <%= f.input :category %>
+    <%= f.input :category, :collection => Product::CATEGORIES, prompt: 'Choose a Food Category' %>
     <%= f.input :validation if current_user.admin %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>

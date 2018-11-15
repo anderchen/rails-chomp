@@ -7,11 +7,13 @@ class Product < ApplicationRecord
 
   has_many :product_restrictions, dependent: :destroy
   has_many :diets, through: :product_restrictions
+  CATEGORIES = ["Vegetable", "Fruit", "Oils", "Meat", "Grains", "Fish", "Milk", "Eggs"].sort
 
   validates :name, presence: true
   validates :description, presence: true
   validates :user_id, presence: true
   validates :validation, default: false
+  validates :category, inclusion: { in: CATEGORIES }
 
   accepts_nested_attributes_for :diets, :product_restrictions
 end
