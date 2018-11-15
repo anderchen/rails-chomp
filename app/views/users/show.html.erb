@@ -1,2 +1,15 @@
 <div class="usershowbody">
+  <div class="container">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+
+
+      <%= cl_image_tag current_user.avatar, height: 400, width: 400, crop: :fill%>
+
+
+    </div>
+  </div>
 </div>
+<%#= cl_image_tag("flower.jpg", :transformation=>[
+  {:width=>200, :height=>200, :gravity=>"face", :radius=>"max", :overlay=>"face_left", :crop=>"thumb"},
+  {:flags=>"layer_apply", :gravity=>"north_east"}
+  ]) %>
