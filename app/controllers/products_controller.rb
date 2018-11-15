@@ -23,13 +23,12 @@ class ProductsController < ApplicationController
     @product = Product.new(product_params)
     @product.user = current_user
     if @product.save
-      params[:product][:product_restriction_ids].each do |diet_id|
-        if Diet.exists?(diet_id)
-          product_restriction = ProductRestriction.new(product: @product, diet: Diet.find(diet_id))
-          @product.product_restrictions << product_restriction
-        end
-      end
-
+      # params[:product][:product_restriction_ids].each do |diet_id|
+      #   if Diet.exists?(diet_id)
+      #     product_restriction = ProductRestriction.new(product: @product, diet: Diet.find(diet_id))
+      #     @product.product_restrictions << product_restriction
+      #   end
+      # end
       redirect_to product_path(@product)
     else
       render :new
@@ -59,9 +58,9 @@ class ProductsController < ApplicationController
 
   def product_params
     if current_user.admin?
-      params.require(:product).permit(:name, :description, :validation, :photo, :brand, :category)
+      params.require(:product).permit(:name, :description, :validation, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
     else
-      params.require(:product).permit(:name, :description, :photo, :brand, :category)
+      params.require(:product).permit(:name, :description, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
     end
   end
 end
