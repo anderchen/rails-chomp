@@ -11,9 +11,4 @@ function loadDynamicBannerText() {
 
 export { loadDynamicBannerText };
 
-$(document).ready(function(){
-  $(".category-choice").click(function(){
-    $(this).toggleClass("active");
-  });
-});
 
