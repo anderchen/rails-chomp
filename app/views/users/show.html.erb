@@ -1,14 +1,40 @@
 <div class="usershowbody">
   <div class="container">
-    <div class="col-xs-12 col-sm-8 col-sm-offset-2 form-login ">
-      <% if current_user.avatar.present? %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1 profile-card">
+        <% if current_user.avatar.present? %>
         <%= cl_image_tag current_user.avatar, height: 400, width: 400, crop: :fill, class: "user-image center-block"%>
 
-      <% else %>
+        <% else %>
         <% avatar_url = current_user.facebook_picture_url || 'anon.png' %>
         <%= image_tag avatar_url, class: "user-image" %>
-      <% end %>
+        <% end %>
         <h4 class="text-center"><%= current_user.first_name %> <%= current_user.last_name %></h4>
+      </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="col-xs-12 col-sm-3 col-sm-offset-1 profile-card">
+        <h2 class="text-center">My Restrictions</h2>
+        <hr>
+        <div class="restrictioncard">
+          <div class="col restrictionicon">
+            MILK
+          </div>
+          <div class="col restrictiontext">
+            I cant eat it
+          </div>
+        </div>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-sm-offset-1 profile-card">
+       <h2 class="text-center">My Review's</h2>
+        <hr>
+       <div class="reviewcard animated fadeIn delay-1s">hello</div>
+       <div class="reviewcard animated fadeIn delay-2s">hello</div>
+       <div class="reviewcard animated fadeIn delay-3s">hello</div>
+     </div>
+   </div>
+ </div>
 </div>
