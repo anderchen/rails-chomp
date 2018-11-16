@@ -1,5 +1,5 @@
 .usershowbody {
-  background-image: url('https://images.pexels.com/photos/886521/pexels-photo-886521.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-image: url('https://images.pexels.com/photos/349609/pexels-photo-349609.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
   background-size: cover !important;
   min-height: calc(100vh - 70px - 50px);
 }
@@ -12,4 +12,93 @@
   border-color: #FF9090;
   border-width: 5px;
 
+}
+
+.profile-card {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+  h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+    font-family: 'Exo'
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
+}
+
+.reviewcard {
+  padding:20px;
+  box-shadow: 0px 0px 49px -11px rgba(0,0,0,0.46);
+  border-radius: 10px;
+  margin-top: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 80px;
+}
+
+.restrictioncard {
+  padding:20px;
+  box-shadow: 0px 0px 49px -11px rgba(0,0,0,0.46);
+  border-radius: 10px;
+  margin-top: 15px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 80px;
+}
+
+.restrictionicon {
+  display: flex;
+  height: 50px;
+  width: 50px;
+  background-color: #FF9090;
+  border-radius: 50%;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto';
+  font-weight: bold;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+}
+
+.restrictiontext {
+  font-size: 13px;
+  font-weight: lighter;
+  font-family: 'Exo';
+  margin-left: 10px;
+  position: absolute;
+  left: auto;
+  color: #333333;
+}
+
+.reviewicon {
+  display: flex;
+  height: 60px;
+  width: 60px;
+  background-color: #74AD7A;
+  border-radius: 50%;
+  font-size: 25px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto';
+  font-weight: bold;
+  align-items: center;
+  position: center;
 }
