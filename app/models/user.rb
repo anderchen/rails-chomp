@@ -9,6 +9,8 @@ class User < ApplicationRecord
   has_many :products
   has_many :user_restrictions, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :diets, through: :user_restrictions
+
 
   def self.from_omniauth(auth)
     user_params = auth.slice(:provider, :uid)

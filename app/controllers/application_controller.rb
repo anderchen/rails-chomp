@@ -6,7 +6,16 @@ class ApplicationController < ActionController::Base
   private
 
   def configure_permitted_parameters
-    update_attrs = [:password, :password_confirmation, :current_password, :last_name, :first_name, :avatar, :avatar_cache, :admin]
+    update_attrs = [:password,
+                    :password_confirmation,
+                    :current_password,
+                    :last_name,
+                    :first_name,
+                    :avatar,
+                    :avatar_cache,
+                    :admin,
+                    diet_attributes: [:name]]
+
     devise_parameter_sanitizer.permit :account_update, keys: update_attrs
   end
 end
