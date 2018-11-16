@@ -1,10 +1,12 @@
 <div class="navbar-wagon">
   <!-- Logo -->
-<!--   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
-  <% end %> -->
-  <a href="http://localhost:3000/" class="logo"><%= image_tag("logo.png", :alt => "Chomp logo", height: '50') %></a>
-
+<%#= link_to root_path, class: "navbar-wagon-brand" do %>
+    <%#= image_tag "logo.png", height: 50 %>
+  <%# end %>
+  <!-- <a href="http://localhost:3000/" class="logo"><%#= image_tag("logo.png", :alt => "Chomp logo", height: '50') %></a> -->
+  <%= link_to root_path, class: 'logo' do  %>
+    <%= image_tag("logo.png", :alt => "Chomp logo", height: '50') %>
+  <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -17,7 +19,7 @@
       <div class="navbar-cards text-center align-items-center">
         <%= link_to t(".new_product", default: "Suggest A Product"), new_product_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center navbutton" %>
       </div>
-<!--       <%= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link navbar-cards" %> -->
+      <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link navbar-cards" %>
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
