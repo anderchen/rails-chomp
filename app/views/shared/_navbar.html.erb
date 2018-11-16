@@ -3,8 +3,10 @@
 <!--   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo.png", height: 50 %>
   <% end %> -->
-  <a href="http://localhost:3000/" class="logo"><%= image_tag("logo.png", :alt => "Chomp logo", height: '50') %></a>
-
+  <!-- <a href="http://localhost:3000/" class="logo"><%#= image_tag("logo.png", :alt => "Chomp logo", height: '50') %></a> -->
+  <%= link_to root_path, class: 'logo' do  %>
+    <%= image_tag("logo.png", :alt => "Chomp logo", height: '50') %>
+  <% end %>
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
