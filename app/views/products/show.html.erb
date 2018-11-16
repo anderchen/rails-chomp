@@ -15,7 +15,8 @@
       </div>
     </div>
   </div>
-  <p class="text-center"><small><%= @product.description %></small></p>
+  <h3>Ingredients:</h3>
+  <p class="text-left"><small><%= @product.description %></small></p>
   <h3 id="review-count">
     <%= pluralize @product.reviews.size, "review" %>
   </h3>
