@@ -35,7 +35,7 @@ html_doc_index.search(".landing-item").each do | element|
 end
 
 
-#Seeding the database with each product info
+# Seeding the database with each product info
 flavor_href.each do |href|
   url_flavor = "https://www.benandjerry.com.br#{href}"
   html_file_flavor = open(url_flavor).read
@@ -43,23 +43,16 @@ flavor_href.each do |href|
 
   puts "Going in #{href}..."
 
-  product = Product.new
-  product.brand = "Ben and Jerry's"
-  product.category = "Ice-cream"
-  product.user_id = 1
-
-  html_doc_flavor.search("h1[itemprop=name]").each do |element|
-    product.name = element.text
+  html_doc_flavor.search(".content").each do |element|
+    product = Product.new
+    product.brand = "Ben and Jerry's"
+    product.category = "Ice-cream"
+    product.user_id = 1
+    product.name = element.css("h1[itemprop=name]").text.strip
+    product.ingredients = element.css(".package-ingredients").text
+    product.traces = element.css(".package-allergy_info").text
+    product.save!
   end
-
-  html_doc_flavor.search(".accordion-content-style").each do |element|
-    product.ingredients = element.css(".package-ingredients").text.strip
-    product.traces = element.css(".package-allergy_info").text.strip
-  end
-
-  product.save!
 end
-
-
 
 puts "Ben and Jerry's successfully added!"
