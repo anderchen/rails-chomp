@@ -10,7 +10,7 @@ class Product < ApplicationRecord
   CATEGORIES = ["Vegetable", "Fruit", "Oils", "Meat", "Grains", "Fish", "Milk", "Eggs"].sort
 
   validates :name, presence: true
-  validates :description, presence: true
+  validates :ingredients, presence: true
   validates :user_id, presence: true
   validates :validation, default: false
   validates :category, inclusion: { in: CATEGORIES }

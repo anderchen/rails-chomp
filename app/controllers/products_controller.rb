@@ -58,9 +58,9 @@ class ProductsController < ApplicationController
 
   def product_params
     if current_user.admin?
-      params.require(:product).permit(:name, :description, :validation, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
+      params.require(:product).permit(:name, :ingredients, :validation, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
     else
-      params.require(:product).permit(:name, :description, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
+      params.require(:product).permit(:name, :ingredients, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
     end
   end
 end
