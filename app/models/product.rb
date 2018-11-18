@@ -7,7 +7,7 @@ class Product < ApplicationRecord
 
   has_many :product_restrictions, dependent: :destroy
   has_many :diets, through: :product_restrictions
-  CATEGORIES = ["Vegetable", "Fruit", "Oils", "Meat", "Grains", "Fish", "Milk", "Eggs"].sort
+  CATEGORIES = ["Vegetable", "Fruit", "Oils", "Meat", "Grains", "Fish", "Milk", "Eggs", "Ice-cream"].sort
 
   validates :name, presence: true
   validates :ingredients, presence: true

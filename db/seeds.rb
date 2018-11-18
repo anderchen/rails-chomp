@@ -10,14 +10,14 @@ require 'open-uri'
 require 'nokogiri'
 
 
-puts "Creating diets...."
+# puts "Creating diets...."
 
-diets = %w(Gluten Vegetarian Wheat Milk Peanut Soy)
-diets.each do |category|
-  Diet.create!(name: category)
-end
+# diets = %w(Gluten Vegetarian Wheat Milk Peanut Soy)
+# diets.each do |category|
+#   Diet.create!(name: category)
+# end
 
-puts "Diets created!!"
+# puts "Diets created!!"
 
 
 
@@ -34,23 +34,32 @@ html_doc_index.search(".landing-item").each do | element|
   flavor_href << element.attribute('href').value
 end
 
+
 #Seeding the database with each product info
 flavor_href.each do |href|
   url_flavor = "https://www.benandjerry.com.br#{href}"
   html_file_flavor = open(url_flavor).read
   html_doc_flavor = Nokogiri::HTML(html_file_flavor)
 
+  puts "Going in #{href}..."
+
   product = Product.new
   product.brand = "Ben and Jerry's"
   product.category = "Ice-cream"
+  product.user_id = 1
 
   html_doc_flavor.search("h1[itemprop=name]").each do |element|
     product.name = element.text
   end
 
-  html_doc_flavor.search("accordion-content-style").each do |element|
-    puts element.attribute()
+  html_doc_flavor.search(".accordion-content-style").each do |element|
+    product.ingredients = element.css(".package-ingredients").text.strip
+    product.traces = element.css(".package-allergy_info").text.strip
   end
+
+  product.save!
 end
+
+
 
 puts "Ben and Jerry's successfully added!"
