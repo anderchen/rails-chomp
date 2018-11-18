@@ -13,7 +13,7 @@ class Product < ApplicationRecord
   validates :ingredients, presence: true
   validates :user_id, presence: true
   validates :validation, default: false
-  validates :category, inclusion: { in: CATEGORIES }
+  # validates :category, inclusion: { in: CATEGORIES }
 
   accepts_nested_attributes_for :diets, :product_restrictions
 end
