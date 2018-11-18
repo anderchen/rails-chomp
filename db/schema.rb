@@ -42,6 +42,7 @@ ActiveRecord::Schema.define(version: 2018_11_17_234912) do
     t.datetime "updated_at", null: false
     t.string "product_number"
     t.string "upc"
+    t.text "traces"
     t.index ["user_id"], name: "index_products_on_user_id"
   end
 
