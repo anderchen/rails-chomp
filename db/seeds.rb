@@ -156,34 +156,36 @@ require 'nokogiri'
 # puts "Mr Veggy's products successfully added"
 
 ##------------------------------------------------------------------------------
-puts "Getting Toddyinho's products..."
-category_href = []
+# puts "Getting Toddyinho's products..."
+# category_href = []
 
-url_index = "https://www.toddynho.com.br/produtos.php"
-html_file_index = open(url_index).read
-html_doc_index = Nokogiri::HTML(html_file_index)
+# url_index = "https://www.toddynho.com.br/produtos.php"
+# html_file_index = open(url_index).read
+# html_doc_index = Nokogiri::HTML(html_file_index)
 
-html_doc_index.search(".box-botao a").each do | element|
-  category_href << element.attribute('href').value
-end
+# html_doc_index.search(".box-botao a").each do | element|
+#   category_href << element.attribute('href').value
+# end
 
-category_href.each do |href|
-  next if href == "tabelas-chocolate.php"
-  puts "Going in #{href}..."
+# category_href.each do |href|
+#   next if href == "tabelas-chocolate.php"
+#   puts "Going in #{href}..."
 
-  url_index = "https://www.toddynho.com.br/#{href}"
-  html_file_index = open(url_index).read
-  html_doc_index = Nokogiri::HTML(html_file_index)
+#   url_index = "https://www.toddynho.com.br/#{href}"
+#   html_file_index = open(url_index).read
+#   html_doc_index = Nokogiri::HTML(html_file_index)
 
-  html_doc_index.search(".box-conteudo-tabela").each do | element|
-    product = Product.new
-    product.brand = "Pepsico"
-    product.user_id = 1
-    product.name = "Toddyinho"
-    product.ingredients = element.css(".ingredientes").text.strip
-    product.traces = element.css(".ingredientes b").last.text.strip
-    product.save!
-  end
-end
+#   html_doc_index.search(".box-conteudo-tabela").each do | element|
+#     product = Product.new
+#     product.brand = "Pepsico"
+#     product.user_id = 1
+#     product.name = "Toddyinho"
+#     product.ingredients = element.css(".ingredientes").text.strip
+#     product.traces = element.css(".ingredientes b").last.text.strip
+#     product.save!
+#   end
+# end
 
-puts "Toddyinho's product successfully added"
+# puts "Toddyinho's product successfully added"
+
+##------------------------------------------------------------------------------
