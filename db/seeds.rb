@@ -86,7 +86,8 @@ require 'nokogiri'
 #     product.name = element.css(".product-details-title").text.strip
 #     product.ingredients = element.css(".product-details-ingredients").text.strip
 
-#     product.photo = element.css(".product-details-image img").attr("src")
+#     url_photo = element.css(".product-details-image img").attr("src")
+#     product.remote_photo_url = url_photo
 
 #     # Using regex to filter the allergens and put it in the traces column
 #     traces = element.css(".product-details-ingredients").text.strip
@@ -150,7 +151,6 @@ new_product_href.each do |href|
     product.name = element.css(".data h1").text.strip
     product.ingredients = element.css(".full-content p").first.text.strip
     product.traces = element.css("strong").first.text.strip
-    product.photo = element.css(".img img").attr("src")
     product.save!
   end
 end
