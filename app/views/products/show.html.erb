@@ -1,11 +1,12 @@
 <div class="container">
   <h1 class="text-center"><%= @product.name %></h1>
+  <h4 class="text-center"><%= @product.brand %></h4>
   <div class="row">
     <div class="col-xs-6 text-center">
       <%= render 'shared/product_image_tag', product: @product %>
     </div>
     <div class="col-xs-6 text-left">
-      <h4>Alimentary Restrictions</h4>
+      <h4>Dietary Restrictions</h4>
       <div class="diet-container">
         <% @product.diets.each do |diet| %>
           <div class="class-item">
