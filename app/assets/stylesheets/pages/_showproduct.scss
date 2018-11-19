@@ -2,3 +2,57 @@
   max-width: 100%;
   height: auto;
 }
+
+.product-contaier {
+  height: calc(100% - 70px - 50px);
+  padding-bottom: 10px;
+  background-size: cover;
+  background: url('https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
+}
+
+.productimg {
+  border-radius: 10px;
+  margin: 20px 0px 20px 0px;
+  vertical-align: center;
+  min-height: 45vh;
+  vertical-align: middle;
+}
+
+.productinfo {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0px 0px 0px;
+  min-height: 45vh;
+
+}
+
+.productinfo h1 {
+  font-family: 'EXO';
+  font-weight: bolder;
+  font-size: 28px;
+  color: #3B3B3B;
+}
+
+.productinfo h4 {
+  font-family: 'EXO';
+  font-weight: lighter;
+  font-size: 15px;
+  color: #3B3B3B;
+}
+
+.productinfo p {
+  font-family: 'EXO';
+  font-weight: lighter;
+  font-size: 13px;
+  color: #B5B5B5;
+}
+
+.reviews {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0px 20px 0px;
+  min-height: 40vh;
+}
+

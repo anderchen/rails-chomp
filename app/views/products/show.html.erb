@@ -1,12 +1,12 @@
+<div class="product-contaier">
 <div class="container">
-  <h1 class="text-center"><%= @product.name %></h1>
-  <h4 class="text-center"><%= @product.brand %></h4>
-  <div class="row">
-    <div class="col-xs-6 text-center">
-      <%= render 'shared/product_image_tag', product: @product %>
-    </div>
-    <div class="col-xs-6 text-left">
-      <h4>Dietary Restrictions</h4>
+<div class="row">
+  <div class="productimg col-xs-12 col-md-4 text-center">
+    <%= render 'shared/product_image_tag', product: @product %>
+  </div>
+    <div class="productinfo col-xs-12 col-md-8">
+      <h1 class="text-center"><%= @product.name %></h1>
+      <h4>Alimentary Restrictions:</h4>
       <div class="diet-container">
         <% @product.diets.each do |diet| %>
           <div class="class-item">
@@ -14,11 +14,11 @@
           </div>
         <% end %>
       </div>
-    </div>
+      <h4>Ingredients:</h4>
+      <p class="text-left"><small><%= @product.ingredients %></small></p>
   </div>
-  <h3>Ingredients:</h3>
-  <p class="text-left"><small><%= @product.ingredients %></small></p>
-  <h3 id="review-count">
+  <div class="reviews col-xs-12 col-md-12">
+      <h3 id="review-count">
     <%= pluralize @product.reviews.size, "review" %>
   </h3>
   <% if @product.reviews.blank? %>
@@ -29,4 +29,7 @@
     <% end %>
   <% end %>
   <%= render 'reviews/form', product: @product, review: @review %>
+  </div>
 </div>
+</div>
+
