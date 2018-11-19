@@ -10,7 +10,7 @@
 }
 
 .banner input {
-  width: 60vw;
+  width: 80vw;
   height: 60px;
   border-radius: 15px;
   border: none;
@@ -60,9 +60,11 @@
 }
 
 .banner h3 {
-  font-size: 65px;
-  margin-bottom: 18vh;
+  font-size: 8vw;
+  margin-bottom: 15vh;
   color: white;
   font-family: 'Exo';
   font-style: bold;
+  white-space: nowrap;
 }
+
