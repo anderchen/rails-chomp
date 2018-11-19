@@ -13,8 +13,16 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <div class="navbar-cards text-center align-items-center">
-        <i class="fa fa-search fa-lg"></i>
+      <div class="navbar-cards text-center align-items-center search-box-collpase">
+        <%= form_tag products_path, method: :get do %>
+          <%= text_field_tag :query,
+              params[:query],
+              class: "search-text",
+              placeholder: "Search for a product..." %>
+          <a class="search-btn">
+            <i class="fa fa-search fa-lg search-icon"></i>
+          </a>
+        <% end %>
       </div>
       <div class="navbar-cards text-center align-items-center">
         <%= link_to t(".new_product", default: "Suggest A Product"), new_product_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center navbutton" %>
