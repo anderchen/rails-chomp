@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" id="product-index">
   <h1>Product List</h1>
   <%= button_to 'Add a new product', new_product_path, class: 'btn btn-primary', method: :get %>
   <div class="row">
@@ -8,7 +8,6 @@
           <div class="card-category"><%= product.category %></div>
           <div class="card-description">
             <h2><%= product.name %></h2>
-            <p><%= product.description %></p>
           </div>
           <%= link_to product.name, product_path(product), class: "card-link" %>
         </div>
