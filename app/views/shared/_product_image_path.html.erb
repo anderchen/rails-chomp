@@ -1,5 +1,5 @@
 <% if product.photo.present? %>
   <%= cl_image_path product.photo, width: 220, crop: :fill %>
 <% else %>
-  <%= image_path 'logo.png', style: 'height: 300px; width: 400px;'%>
+  <%= image_path 'noimg.png', style: 'height: 300px; width: 400px;'%>
 <% end %>

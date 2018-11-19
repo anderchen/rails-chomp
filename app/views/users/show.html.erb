@@ -6,7 +6,7 @@
           <% if current_user.avatar.present? %>
           <%= cl_image_tag current_user.avatar, height: 400, width: 400, crop: :fill, class: "user-image center-block"%>
           <% else %>
-          <% avatar_url = current_user.facebook_picture_url || 'anon.png' %>
+          <% avatar_url = current_user.facebook_picture_url || 'defaulticon.png' %>
           <%= image_tag avatar_url, class: "user-image" %>
           <% end %>
           <h4 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h4>

@@ -1,9 +1,9 @@
 <% if user.avatar.present? %>
   <%= cl_image_tag user.avatar, width: 50, height: 50, crop: :thumb, gravity: :face, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 <% else %>
-  <% avatar_url = current_user.facebook_picture_url || 'anon.png' %>
+  <% avatar_url = current_user.facebook_picture_url || 'defaulticon.png' %>
   <%= image_tag avatar_url, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
-  <%#= image_tag 'anon.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+  <%#= image_tag 'defaulticon.png', class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
 <% end %>
 
 
