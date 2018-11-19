@@ -11,7 +11,7 @@
   <% end %>
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :description %>
+    <%= f.input :ingredients %>
     <%= f.input :brand %>
     <%= f.input :category, :collection => Product::CATEGORIES, prompt: 'Choose a Food Category' %>
     <%= f.input :validation if current_user.admin %>
