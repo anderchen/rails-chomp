@@ -1,4 +1,18 @@
 class Product < ApplicationRecord
+  include PgSearch
+
+  pg_search_scope :search_by_name_ingredients_brand_category_traces,
+                  against: [
+                    [:name, 'A'],
+                    [:ingredients, 'C'],
+                    [:brand, 'B'],
+                    [:category, 'D'],
+                    [:traces, 'E']
+                  ],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
+
   mount_uploader :photo, PhotoUploader
 
   belongs_to :user

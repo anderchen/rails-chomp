@@ -1,7 +1,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-## UNCOMMENT EACH ONE OF THE SEEDS TO WORK!!
+# # UNCOMMENT EACH ONE OF THE SEEDS TO WORK!!
 
 # puts "Creating diets...."
 
@@ -12,7 +12,7 @@ require 'nokogiri'
 
 # puts "Diets created!!"
 
-##-----------------------------------------------------------
+# #-----------------------------------------------------------
 
 # # Getting Ben and Jerry's products
 # puts "Adding Ben and Jerry's to products...."
@@ -50,7 +50,7 @@ require 'nokogiri'
 
 # puts "Ben and Jerry's successfully added!"
 
-##--------------------------------------------------------------------------------
+# #--------------------------------------------------------------------------------
 
 # # Getting Taeq's products
 # puts "Adding Taeq to products...."
@@ -58,7 +58,7 @@ require 'nokogiri'
 # counter = 1
 # product_href = []
 
-# while counter < 19
+# while counter < 14
 #   if counter != 9
 #     url_index = "https://www.conquistesuavida.com.br/produtos/#{counter}?"
 #     html_file_index = open(url_index).read
@@ -103,91 +103,91 @@ require 'nokogiri'
 
 # puts "Taeq successfully added!"
 
-## ------------------------------------------------------------------------------
+# # ------------------------------------------------------------------------------
 
-## Scraping products from Mr Veggy
-# puts "Getting Mr Veggy's products..."
+# Scraping products from Mr Veggy
+puts "Getting Mr Veggy's products..."
 
-## Getting Mr Veggy's category href
-# category_href = []
+# Getting Mr Veggy's category href
+category_href = []
 
-# url_index = "http://mrveggy.com/produtos-mr-veggy/"
-# html_file_index = open(url_index).read
-# html_doc_index = Nokogiri::HTML(html_file_index)
+url_index = "http://mrveggy.com/produtos-mr-veggy/"
+html_file_index = open(url_index).read
+html_doc_index = Nokogiri::HTML(html_file_index)
 
-# html_doc_index.search(".img-produto a").each do | element|
-#   category_href << element.attribute('href').value
-# end
+html_doc_index.search(".img-produto a").each do | element|
+  category_href << element.attribute('href').value
+end
 
-# # Getting Mr Veggy's product href
-# product_href = []
-# category_href.each do |category|
+# Getting Mr Veggy's product href
+product_href = []
+category_href.each do |category|
 
-#   url_index = category
-#   html_file_index = open(url_index).read
-#   html_doc_index = Nokogiri::HTML(html_file_index)
+  url_index = category
+  html_file_index = open(url_index).read
+  html_doc_index = Nokogiri::HTML(html_file_index)
 
-#   html_doc_index.search(".data a").each do | element|
-#     product_href << element.attribute('href').value
-#   end
-# end
-# new_product_href, odd = product_href.partition.with_index { |_,i| i.even? }
+  html_doc_index.search(".data a").each do | element|
+    product_href << element.attribute('href').value
+  end
+end
+new_product_href, odd = product_href.partition.with_index { |_,i| i.even? }
 
-# # Getting information of each Mr Veggy's product
-# new_product_href.each do |href|
-#   next if href == "http://mrveggy.com/produtos/quibe-vegetariano/"
-#   puts "Going in #{href}..."
+# Getting information of each Mr Veggy's product
+new_product_href.each do |href|
+  next if href == "http://mrveggy.com/produtos/quibe-vegetariano/"
+  puts "Going in #{href}..."
 
 
-#   url_index = href
-#   html_file_index = open(url_index).read
-#   html_doc_index = Nokogiri::HTML(html_file_index)
+  url_index = href
+  html_file_index = open(url_index).read
+  html_doc_index = Nokogiri::HTML(html_file_index)
 
-#   html_doc_index.search(".produto-classicos").each do | element|
-#     product = Product.new
-#     product.brand = "Mr. Veggy"
-#     product.user_id = 1
-#     product.name = element.css(".data h1").text.strip
-#     product.ingredients = element.css(".full-content p").first.text.strip
-#     product.traces = element.css("strong").first.text.strip
-#     product.photo = element.css(".img img").attr("src")
-#     product.save!
-#   end
-# end
+  html_doc_index.search(".produto-classicos").each do | element|
+    product = Product.new
+    product.brand = "Mr. Veggy"
+    product.user_id = 1
+    product.name = element.css(".data h1").text.strip
+    product.ingredients = element.css(".full-content p").first.text.strip
+    product.traces = element.css("strong").first.text.strip
+    product.photo = element.css(".img img").attr("src")
+    product.save!
+  end
+end
 
-# puts "Mr Veggy's products successfully added"
+puts "Mr Veggy's products successfully added"
 
-##------------------------------------------------------------------------------
-# puts "Getting Toddyinho's products..."
-# category_href = []
+#------------------------------------------------------------------------------
+puts "Getting Toddyinho's products..."
+category_href = []
 
-# url_index = "https://www.toddynho.com.br/produtos.php"
-# html_file_index = open(url_index).read
-# html_doc_index = Nokogiri::HTML(html_file_index)
+url_index = "https://www.toddynho.com.br/produtos.php"
+html_file_index = open(url_index).read
+html_doc_index = Nokogiri::HTML(html_file_index)
 
-# html_doc_index.search(".box-botao a").each do | element|
-#   category_href << element.attribute('href').value
-# end
+html_doc_index.search(".box-botao a").each do | element|
+  category_href << element.attribute('href').value
+end
 
-# category_href.each do |href|
-#   next if href == "tabelas-chocolate.php"
-#   puts "Going in #{href}..."
+category_href.each do |href|
+  next if href == "tabelas-chocolate.php"
+  puts "Going in #{href}..."
 
-#   url_index = "https://www.toddynho.com.br/#{href}"
-#   html_file_index = open(url_index).read
-#   html_doc_index = Nokogiri::HTML(html_file_index)
+  url_index = "https://www.toddynho.com.br/#{href}"
+  html_file_index = open(url_index).read
+  html_doc_index = Nokogiri::HTML(html_file_index)
 
-#   html_doc_index.search(".box-conteudo-tabela").each do | element|
-#     product = Product.new
-#     product.brand = "Pepsico"
-#     product.user_id = 1
-#     product.name = "Toddyinho"
-#     product.ingredients = element.css(".ingredientes").text.strip
-#     product.traces = element.css(".ingredientes b").last.text.strip
-#     product.save!
-#   end
-# end
+  html_doc_index.search(".box-conteudo-tabela").each do | element|
+    product = Product.new
+    product.brand = "Pepsico"
+    product.user_id = 1
+    product.name = "Toddyinho"
+    product.ingredients = element.css(".ingredientes").text.strip
+    product.traces = element.css(".ingredientes b").last.text.strip
+    product.save!
+  end
+end
 
-# puts "Toddyinho's product successfully added"
+puts "Toddyinho's product successfully added"
 
-##------------------------------------------------------------------------------
+#------------------------------------------------------------------------------

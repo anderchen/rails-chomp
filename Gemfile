@@ -22,7 +22,6 @@ gem 'omniauth-facebook'
 gem 'animate-rails'
 gem 'rails_real_favicon'
 
-
 # img upload gems
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
@@ -30,6 +29,9 @@ gem 'carrierwave', '~> 1.2'
 # admin gems
 gem 'remotipart', github: 'mshibuya/remotipart'
 gem 'rails_admin', '>= 1.0.0.rc'
+
+# search gems
+gem 'pg_search'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
