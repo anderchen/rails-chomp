@@ -9,15 +9,16 @@ class ProductsController < ApplicationController
         category ILIKE :query OR \
         traces ILIKE :query"
 
-      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+      @products = Product.where(sql_query, query: "%#{params[:query]}%").where(validation: true).paginate(page: params[:page], per_page: 12)
     else
-      @products = Product.all
+      @products = Product.where(validation: true).paginate(page: params[:page], per_page: 12)
+
     end
   end
 
   def show
     @product = Product.find(params[:id])
-    @review = Review.new # <-- You need this now.
+    @review = Review.new
   end
 
   def validate

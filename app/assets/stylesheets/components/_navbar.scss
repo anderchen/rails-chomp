@@ -146,6 +146,43 @@
   color: #FF9090;
 }
 
+
+.search-btn {
+  float: right;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+  cursor: pointer;
+  // height: 13px;
+  // width: 13px;
+}
+
+.search-text {
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0px;
+  transition: 0.4s;
+  line-height: 13px;
+  width:0px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.search-box-collapse{
+  .search-text {
+    width: 0px;
+  }
+}
+
+.search-box-expand {
+  .search-text {
+    width: 240px
+  }
+}
+
 @-webkit-keyframes wiggle {
   0% {-webkit-transform: rotate(10deg);}
   25% {-webkit-transform: rotate(-10deg);}

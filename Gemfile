@@ -33,6 +33,9 @@ gem 'rails_admin', '>= 1.0.0.rc'
 # search gems
 gem 'pg_search'
 
+# paginate gems
+gem 'will_paginate', '~> 3.1.1'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
