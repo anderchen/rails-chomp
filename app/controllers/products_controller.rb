@@ -1,7 +1,18 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:validate, :show, :edit, :update, :destroy]
   def index
-    @products = Product.all
+    if params[:query].present?
+      sql_query = "\
+        name ILIKE :query OR \
+        ingredients ILIKE :query OR \
+        brand ILIKE :query OR \
+        category ILIKE :query OR \
+        traces ILIKE :query"
+
+      @products = Product.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @products = Product.all
+    end
   end
 
   def show
@@ -58,9 +69,9 @@ class ProductsController < ApplicationController
 
   def product_params
     if current_user.admin?
-      params.require(:product).permit(:name, :description, :validation, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
+      params.require(:product).permit(:name, :ingredients, :validation, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
     else
-      params.require(:product).permit(:name, :description, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
+      params.require(:product).permit(:name, :ingredients, :photo, :brand, :category, :diet_ids => [], :product_restriction_ids => [])
     end
   end
 end
