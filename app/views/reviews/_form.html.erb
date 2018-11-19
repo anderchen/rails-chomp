@@ -1,5 +1,5 @@
 <%= simple_form_for([ product, review ], remote: true) do |form| %>
-  <%= form.input :score %>
+  <%= form.input :approved, as: :radio_buttons, label: 'Is the information on this page accurate?' %>
   <%= form.input :content, as: :text %>
   <%= form.button :submit %>
 <% end %>
