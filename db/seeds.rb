@@ -129,10 +129,12 @@ end
 new_product_href, odd = product_href.partition.with_index { |_,i| i.even? }
 
 # Getting information of each Mr Veggy's product
-new_product_href.each do |product|
-  puts "Going in #{product}..."
+new_product_href.each do |href|
+  next if href == "http://mrveggy.com/produtos/quibe-vegetariano/"
+  puts "Going in #{href}..."
 
-  url_index = product
+
+  url_index = href
   html_file_index = open(url_index).read
   html_doc_index = Nokogiri::HTML(html_file_index)
 
