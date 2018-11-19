@@ -3,7 +3,13 @@
     <h3 class="col-xs-12 animated fadeIn">
       <span id="banner-typed-text"></span>
     </h3>
-    <input class="animated bounceInDown slow" type="text" placeholder="Search for a product...">
+<!--     <input class="animated bounceInDown slow" type="text" placeholder="Search for a product..."> -->
+    <%= form_tag products_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control animated bounceInDown slow",
+          placeholder: "Search for a product..." %>
+    <% end %>
     <p class="animated fadeIn delay-1s">POPULAR PRODUCTS</p>
     <%= link_to 'Mortadela', products_path, class: 'btn animated fadeIn delay-2s'  %>
     <%= link_to 'Palmito', products_path, class: 'btn animated fadeIn delay-2s'  %>
