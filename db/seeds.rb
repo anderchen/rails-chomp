@@ -1,6 +1,8 @@
 require 'open-uri'
 require 'nokogiri'
 
+## UNCOMMENT EACH ONE OF THE SEEDS TO WORK!!
+
 # puts "Creating diets...."
 
 # diets = %w(Gluten Vegetarian Wheat Milk Peanut Soy)
