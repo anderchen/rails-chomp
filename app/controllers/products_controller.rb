@@ -2,14 +2,7 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:validate, :show, :edit, :update, :destroy]
   def index
     if params[:query].present?
-      sql_query = "\
-        name ILIKE :query OR \
-        ingredients ILIKE :query OR \
-        brand ILIKE :query OR \
-        category ILIKE :query OR \
-        traces ILIKE :query"
-
-      @products = Product.where(sql_query, query: "%#{params[:query]}%").where(validation: true).paginate(page: params[:page], per_page: 12)
+      @products = Product.search_product(params[:query]).where(validation: true).paginate(page: params[:page], per_page: 12)
     else
       @products = Product.where(validation: true).paginate(page: params[:page], per_page: 12)
 
