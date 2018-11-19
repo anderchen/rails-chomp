@@ -6,6 +6,7 @@
   </div>
     <div class="productinfo col-xs-12 col-md-8">
       <h1 class="text-center"><%= @product.name %></h1>
+      <p class="text-center"><%= @product.brand %></p>
       <h4>Alimentary Restrictions:</h4>
       <div class="diet-container">
         <% @product.diets.each do |diet| %>
@@ -32,4 +33,4 @@
   </div>
 </div>
 </div>
-
+</div>
