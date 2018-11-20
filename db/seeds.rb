@@ -12,45 +12,45 @@ end
 
 puts "Diets created!!"
 
-#-----------------------------------------------------------
+# #-----------------------------------------------------------
 
-# Getting Ben and Jerry's products
-puts "Adding Ben and Jerry's to products...."
-# Getting the href of each product
-url_index = 'https://www.benandjerry.com.br/sabores/potes'
-html_file_index = open(url_index).read
-html_doc_index = Nokogiri::HTML(html_file_index)
+# # Getting Ben and Jerry's products
+# puts "Adding Ben and Jerry's to products...."
+# # Getting the href of each product
+# url_index = 'https://www.benandjerry.com.br/sabores/potes'
+# html_file_index = open(url_index).read
+# html_doc_index = Nokogiri::HTML(html_file_index)
 
-flavor_href = []
+# flavor_href = []
 
-html_doc_index.search(".landing-item").each do | element|
-  flavor_href << element.attribute('href').value
-end
+# html_doc_index.search(".landing-item").each do | element|
+#   flavor_href << element.attribute('href').value
+# end
 
 
-# Seeding the database with each product info
-flavor_href.each do |href|
-  url_flavor = "https://www.benandjerry.com.br#{href}"
-  html_file_flavor = open(url_flavor).read
-  html_doc_flavor = Nokogiri::HTML(html_file_flavor)
+# # Seeding the database with each product info
+# flavor_href.each do |href|
+#   url_flavor = "https://www.benandjerry.com.br#{href}"
+#   html_file_flavor = open(url_flavor).read
+#   html_doc_flavor = Nokogiri::HTML(html_file_flavor)
 
-  puts "Going in #{href}..."
+#   puts "Going in #{href}..."
 
-  html_doc_flavor.search(".content").each do |element|
-    product = Product.new
-    product.brand = "Ben and Jerry's"
-    product.category = "Ice-cream"
-    product.user_id = 1
-    product.name = element.css("h1[itemprop=name]").text.strip
-    product.ingredients = element.css(".package-ingredients").text.strip
-    product.traces = element.css(".package-allergy_info").text.strip
-    product.save!
-  end
-end
+#   html_doc_flavor.search(".content").each do |element|
+#     product = Product.new
+#     product.brand = "Ben and Jerry's"
+#     product.category = "Ice-cream"
+#     product.user_id = 1
+#     product.name = element.css("h1[itemprop=name]").text.strip
+#     product.ingredients = element.css(".package-ingredients").text.strip
+#     product.traces = element.css(".package-allergy_info").text.strip
+#     product.save!
+#   end
+# end
 
-puts "Ben and Jerry's successfully added!"
+# puts "Ben and Jerry's successfully added!"
 
-#--------------------------------------------------------------------------------
+# #--------------------------------------------------------------------------------
 
 # Getting Taeq's products
 puts "Adding Taeq to products...."
