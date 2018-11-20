@@ -20,7 +20,8 @@ class ProductsController < ApplicationController
         filtered_products << product if (user_diet_id & product_diet_id).empty?
       end
 
-      @products = filtered_products
+      @products = filtered_products.paginate.paginate(page: params[:page], per_page: 12)
+
     else
       @products = Product.where(validation: true).paginate(page: params[:page], per_page: 12)
 
