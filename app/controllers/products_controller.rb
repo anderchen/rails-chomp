@@ -2,7 +2,25 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:validate, :show, :edit, :update, :destroy]
   def index
     if params[:query].present?
-      @products = Product.search_product(params[:query]).where(validation: true).paginate(page: params[:page], per_page: 12)
+      search_result = Product.search_product(params[:query]).where(validation: true)
+
+      user_diet_id = []
+
+      current_user.user_restrictions.each do |restriction|
+        user_diet_id << restriction.diet_id
+      end
+
+      filtered_products = []
+
+      search_result.each do |product|
+        product_diet_id = []
+        product.product_restrictions.each do |restriction|
+          product_diet_id << restriction.diet_id
+        end
+        filtered_products << product if (user_diet_id & product_diet_id).empty?
+      end
+
+      @products = filtered_products
     else
       @products = Product.where(validation: true).paginate(page: params[:page], per_page: 12)
 
