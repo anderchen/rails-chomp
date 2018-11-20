@@ -5,7 +5,7 @@ require 'nokogiri'
 
 puts "Creating diets...."
 
-diets = %w(Gluten Meat Milk Peanut Soy Seafood)
+diets = %w(Milk Eggs Fish Crustacean Nuts Peanuts Wheat Soybeans Meat Gluten)
 diets.each do |category|
   Diet.create!(name: category)
 end
