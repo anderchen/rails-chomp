@@ -1,3 +1,9 @@
+.productindex {
+  background-image: url('https://images.pexels.com/photos/811107/pexels-photo-811107.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'), linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+  background-size: cover !important;
+  min-height: calc(100vh - 70px - 50px);
+}
+
 #product-index .col-xs-12, #product-index .col-sm-4 {
   padding-top: 2%;
 }
@@ -8,4 +14,13 @@
 
 #product-index .button_to {
   margin-bottom: 10px;
+}
+
+
+.productscard {
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin: 20px;
 }
