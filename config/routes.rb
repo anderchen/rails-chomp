@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  get 'errors/not_found'
-  get 'errors/internal_server_error'
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+
+  match '404', to: "errors#not_found", via: :all
+  match '500', to: "errors#internal_server_error", via: :all
+  # match '*unmatched_route', to: "errors#not_found", via: :all
+
+  # get '/422', to: "errors#unacceptable"
 
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                                     registrations: 'users/registrations' }
@@ -18,5 +22,4 @@ Rails.application.routes.draw do
   end
 
   resources :diets
-
 end
