@@ -2,29 +2,31 @@ class ProductsController < ApplicationController
   before_action :set_product, only: [:validate, :show, :edit, :update, :destroy]
   def index
     if params[:query].present?
+      # Get the search result from PG Search
       search_result = Product.search_product(params[:query]).where(validation: true)
 
+      # Getting the restrictions of the current_user
       user_diet_id = []
-
       current_user.user_restrictions.each do |restriction|
         user_diet_id << restriction.diet_id
       end
 
+      # Getting each restriction of each product and comparing with the restriction of the user
       filtered_products = []
-
       search_result.each do |product|
         product_diet_id = []
         product.product_restrictions.each do |restriction|
           product_diet_id << restriction.diet_id
         end
+        # If there's even one similar diet_id, it returns 'true' and puts in an array
         filtered_products << product if (user_diet_id & product_diet_id).empty?
       end
 
+      # Output is the filtered array of the search
       @products = filtered_products.paginate.paginate(page: params[:page], per_page: 12)
 
     else
       @products = Product.where(validation: true).paginate(page: params[:page], per_page: 12)
-
     end
   end
 
