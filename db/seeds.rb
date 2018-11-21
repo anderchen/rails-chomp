@@ -5,7 +5,26 @@ require 'nokogiri'
 
 puts "Creating diets...."
 
-diets = ['Milk', 'Eggs', 'Fish', 'Crustacean', 'Nuts', 'Peanuts', 'Wheat' 'Soybeans', 'Meat', 'Gluten', 'Traces of Milk', 'Traces of Eggs', 'Traces of Fish', 'Traces of Crustacean', 'Traces of Nuts', 'Traces of Peanuts', 'Traces of Wheat', 'Traces of Soybeans', 'Traces of Meat', 'Traces of Gluten')]
+diets = ['Leite',
+         'Ovos',
+         'Peixe',
+         'Crustácio',
+         'Nozes',
+         'Amendoim',
+         'Trigo',
+         'Soja',
+         'Carne',
+         'Gluten',
+         'Traços de Leite',
+         'Traços de Ovos',
+         'Traços de Peixe',
+         'Traços de Crustácio',
+         'Traços de Nozes',
+         'Traços de Amendoim',
+         'Traços de Trigo',
+         'Traços de Soja',
+         'Traços de Carne',
+         'Traços de Gluten')]
 diets.each do |category|
   Diet.create!(name: category)
 end

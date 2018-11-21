@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     @user.user_restrictions.destroy_all
-    params[:user][:diet_ids].each do |diet_id|
+    params[:current_user][:diet_ids].each do |diet_id|
       if Diet.exists?(diet_id)
         user_restriction = UserRestriction.new(user: @user, diet: Diet.find(diet_id))
         @user.user_restrictions << user_restriction
@@ -54,9 +54,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # end
 
   # If you have extra params to permit, append them to the sanitizer.
-  def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
-  end
+  # def configure_account_update_params
+  #   devise_parameter_sanitizer.permit(:account_update, keys: [:attribute])
+  # end
 
   # The path used after sign up.
   # def after_sign_up_path_for(resource)
@@ -68,5 +68,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
   #   super(resource)
   # end
 
+  def update_resource(resource, params)
+    # Require current password if user is trying to change password.
+    return super if params["password"]&.present?
 
+    # Allows user to update registration information without password.
+    resource.update_without_password(params.except("current_password"))
+  end
 end

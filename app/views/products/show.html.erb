@@ -7,7 +7,7 @@
     <div class="productinfo col-xs-12 col-md-8">
       <h1 class="text-center"><%= @product.name %></h1>
       <p class="text-center"><%= @product.brand %></p>
-      <h4>Alimentary Restrictions:</h4>
+      <h4>Restrições Alimentares:</h4>
       <div class="diet-container">
         <% @product.diets.each do |diet| %>
           <div class="class-item">
@@ -15,7 +15,7 @@
           </div>
         <% end %>
       </div>
-      <h4>Ingredients:</h4>
+      <h4>Ingredientes:</h4>
       <p class="text-left"><small><%= @product.ingredients %></small></p>
   </div>
   <div class="reviews col-xs-12 col-md-12">
@@ -23,7 +23,7 @@
     <%= pluralize @product.reviews.size, "review" %>
   </h3>
   <% if @product.reviews.blank? %>
-    <p id="first_review_message">Be the first to leave a review for <%= @product.name %></p>
+    <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %></p>
   <% else %>
     <% @product.reviews.each do |review| %>
       <%= render 'reviews/show', review: review %>
