@@ -17,7 +17,19 @@
     <%= f.input :validation if current_user.admin %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.association :diets, as: :check_boxes %>
+    <% f.association :diets, as: :check_boxes %>
+    <fieldset class="form-group">
+      <legend class="col-form-label pt-0">Diets</legend>
+      <input type="hidden" name="product[diet_ids][]" value="">
+      <div class="category-choices">
+      <% Diet.all.each do |diet| %>
+          <input class="hidden" <%= "checked='checked'" if product.diets.include?(diet)  %> type="checkbox" value="<%= diet.id %>" name="product[diet_ids][]" id="product_diet_ids_<%= diet.id %>">
+
+          <label class="category-choice <%= 'active' if product.diets.include?(diet)  %>" for="product_diet_ids_<%= diet.id %>"><%= diet.name %>
+          </label>
+        <% end %>
+      </div>
+    </fieldset>
   </div>
 
   <div class="form-actions">
