@@ -9,10 +9,10 @@
 
         <div class="row">
           <div class="col-xs-6">
-            <%= f.input :first_name, required: true, autofocus: true %>
+            <%= f.input :first_name, required: true, autofocus: true, label: 'Nome' %>
           </div>
           <div class="col-xs-6">
-            <%= f.input :last_name, required: true, autofocus: true  %>
+            <%= f.input :last_name, required: true, autofocus: true, label: 'Sobrenome' %>
           </div>
         </div>
 
@@ -26,20 +26,20 @@
             <%= f.input :password,
             hint: "Deixe em branco caso não queira mudar",
             required: false,
-            input_html: { autocomplete: "new-password" } %>
+            input_html: { autocomplete: "new-password" }, label: 'Nova senha' %>
           </div>
           <div class="col-xs-6">
             <%= f.input :password_confirmation,
             required: false,
-            input_html: { autocomplete: "new-password" } %>
+            input_html: { autocomplete: "new-password" }, label: 'Confirmação' %>
           </div>
         </div>
-        <%= f.input :avatar %>
+        <%= f.input :avatar, label: 'Foto do perfil' %>
         <%= f.input :avatar_cache, as: :hidden %>
         <%= f.input :current_password,
-                  hint: "we need your current password to confirm your changes",
+                  hint: "Precisamos da sua senha atual para confirmar as mudanças no seu perfil",
                   required: true,
-                  input_html: { autocomplete: "current-password" } %>
+                  input_html: { autocomplete: "current-password" }, label: 'Senha atual' %>
         <fieldset class="form-group">
           <legend class="col-form-label pt-0">Restrições</legend>
           <input type="hidden" name="current_user[diet_ids][]" value="">

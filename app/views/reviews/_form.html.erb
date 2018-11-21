@@ -1,5 +1,5 @@
   <%= simple_form_for([ product, review ], remote: true) do |form| %>
-  <%= form.input :approved, as: :radio_buttons, label: 'As informações estão corretos?' %>
+  <%= form.input :approved, as: :radio_buttons, label: 'As informações estão corretas?' %>
   <%= form.input :content, label: "Conteúdo", as: :text %>
   <%= form.submit "Enviar", class: "btn btn-primary" %>
 <% end %>

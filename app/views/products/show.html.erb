@@ -42,13 +42,13 @@
               </h4>
             </div>
           </div>
-
+        <% if @product.reviews.blank? %>
           <div class="col-xs-12 col-md-7 text-center ">
-          <% if @product.reviews.blank? %>
-          <div class="allreviews col-xs-12 col-md-12 text-center">
-          <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %>
-          </p>
-        </div>
+            <% if @product.reviews.blank? %>
+            <div class="allreviews col-xs-12 col-md-12 text-center">
+            <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %>
+            </p>
+            </div>
           </div>
           <% else %>
           <% @product.reviews.each do |review| %>
