@@ -34,21 +34,22 @@
                 </div>
               </div>
             </h3>
+
             <div class="row">
               <hr>
-              <h4 id="thumbsup"><i class="far fa-thumbs-up"></i>: <%= ((yes/total) * 100).round(2) %> %
+              <h4 id="thumbsup"><i class="far fa-thumbs-up"></i>: <%= ((yes/total) * 100).round(2) unless @product.reviews.blank? %> %
               </h4>
-              <h4 id="thumbsdown"><i class="far fa-thumbs-down"></i>: <%= ((no/total) * 100).round(2) %> %
+              <h4 id="thumbsdown"><i class="far fa-thumbs-down"></i>: <%= ((no/total) * 100).round(2) unless @product.reviews.blank? %> %
               </h4>
             </div>
           </div>
-        <% if @product.reviews.blank? %>
+
           <div class="col-xs-12 col-md-7 text-center ">
-            <% if @product.reviews.blank? %>
-            <div class="allreviews col-xs-12 col-md-12 text-center">
-            <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %>
-            </p>
-            </div>
+          <% if @product.reviews.blank? %>
+          <div class="allreviews col-xs-12 col-md-12 text-center">
+          <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %>
+          </p>
+        </div>
           </div>
           <% else %>
           <% @product.reviews.each do |review| %>
