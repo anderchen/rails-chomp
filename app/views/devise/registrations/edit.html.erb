@@ -40,7 +40,18 @@
                   hint: "we need your current password to confirm your changes",
                   required: true,
                   input_html: { autocomplete: "current-password" } %>
-        <%= f.association :diets, as: :check_boxes %>
+        <fieldset class="form-group">
+          <legend class="col-form-label pt-0">Diets</legend>
+          <input type="hidden" name="current_user[diet_ids][]" value="">
+          <div class="category-choices">
+          <% Diet.all.each do |diet| %>
+              <input class="hidden" <%= "checked='checked'" if current_user.diets.include?(diet)  %> type="checkbox" value="<%= diet.id %>" name="current_user[diet_ids][]" id="current_user_diet_ids_<%= diet.id %>">
+
+              <label class="category-choice <%= 'active' if current_user.diets.include?(diet)  %>" for="current_user_diet_ids_<%= diet.id %>"><%= diet.name %>
+              </label>
+            <% end %>
+          </div>
+        </fieldset>
         <div class="form-actions">
           <%= f.button :submit, "Update", class: "btn btn-primary" %>
         </div>

@@ -1,4 +1,5 @@
 <div class="productindex">
+
 <div class="container" id="product-index">
   <div class="row">
     <div class="col-xs-12 col-sm-10 productscard">
@@ -10,14 +11,13 @@
           <div class="card-category"><%= product.category %></div>
           <div class="card-description">
             <h2><%= product.name %></h2>
+            <%= link_to product.name, product_path(product), class: "card-link" %>
           </div>
-          <%= link_to product.name, product_path(product), class: "card-link" %>
         </div>
-      </div>
-    <% end  %>
+        <% end  %>
 
-  <%= will_paginate @products %>
+        <%= will_paginate @products %>
+      </div>
+    </div>
   </div>
-</div>
-</div>
 </div>
