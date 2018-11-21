@@ -28,8 +28,9 @@
   left: 10px;
 }
 .card-description h2 {
-  font-size: 24px;
+  font-size: 20px;
 }
+
 .card-description p {
   font-size: 14px;
   opacity: 0.7;
@@ -50,4 +51,10 @@
   opacity: 0.1;
 }
 
+.card:hover {
+    -webkit-animation: pulse 1s;
+    animation: pulse 2s;
+    -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
 
