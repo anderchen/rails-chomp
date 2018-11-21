@@ -1,69 +1,80 @@
-<div class="product-contaier">
+<div data-aos="fade-in" class="product-contaier">
   <div class="container">
     <div class="row">
-      <div class="productimg col-xs-12 col-md-4 text-center">
+      <div data-aos="fade-in" class="productimg col-xs-12 col-md-4 text-center">
         <%= render 'shared/product_image_tag', product: @product %>
       </div>
-      <div class="productinfo col-xs-12 col-md-8">
+      <div data-aos="fade-in" class="productinfo col-xs-12 col-md-8">
         <h1 class="text-center"><%= @product.name %></h1>
         <p class="text-center"><%= @product.brand %></p>
         <hr>
         <h4>Restrições Alimentares:</h4>
-        <div class="diet-container">
-          <% @product.diets.each do |diet| %>
-          <div class="class-item">
-            <strong><%= diet.name %></strong>
-          </div>
-          <% end %>
-        </div>
-        <hr>
-        <h4>Ingredientes:</h4>
-        <p class="text-left"><small><%= @product.ingredients %></small></p>
-      </div>
-      <div class="reviews col-xs-12 col-md-12">
         <div class="row">
-          <div class="reviewstats col-xs-12 col-md-4 text-center">
-            <h3 id="review-count">
-              <div class="row">
-                <div id="reviewegg">
-                  <% yes = @product.reviews.where(approved: true).count.to_f %>
-                  <% no = @product.reviews.where(approved: false).count.to_f %>
-                  <% total = @product.reviews.size %>
-                  <%= pluralize @product.reviews.size, "" %>
-                  <h4>Reviews</h4>
-                </div>
-              </div>
-            </h3>
-
+        <div class="alergicicon iconred text-center">
+          <i class="iconsvg icon-almonds"></i>
+          <h4>ALMONDS</h4>
+        </div>
+        <div class="alergicicon iconyellow text-center">
+          <i class="iconsvg icon-fish"></i>
+          <h4>FISH</h4>
+        </div>
+      </div>
+      <hr>
+      <h4>Ingredientes:</h4>
+      <p class="text-left"><small><%= @product.ingredients %></small></p>
+      </div>
+      <div class="diet-container">
+        <% @product.diets.each do |diet| %>
+        <div class="class-item">
+          <strong><%= diet.name %></strong>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <div class="reviews col-xs-12 col-md-12">
+      <div class="row">
+        <div data-aos="fade-in" class="reviewstats col-xs-12 col-md-4 text-center">
+          <h3 id="review-count">
             <div class="row">
-              <hr>
-              <h4 id="thumbsup"><i class="far fa-thumbs-up"></i>: <%= ((yes/total) * 100).round(2) %> %
-              </h4>
-              <h4 id="thumbsdown"><i class="far fa-thumbs-down"></i>: <%= ((no/total) * 100).round(2) %> %
-              </h4>
+              <div id="reviewegg">
+                <% yes = @product.reviews.where(approved: true).count.to_f %>
+                <% no = @product.reviews.where(approved: false).count.to_f %>
+                <% total = @product.reviews.size %>
+                <%= pluralize @product.reviews.size, "" %>
+                <h4>Reviews</h4>
+              </div>
             </div>
-          </div>
+          </h3>
 
-          <div class="col-xs-12 col-md-7 text-center ">
+          <div class="row">
+            <hr>
+            <h4 id="thumbsup"><i class="far fa-thumbs-up"></i>: <%= ((yes/total) * 100).round(2) %> %
+            </h4>
+            <h4 id="thumbsdown"><i class="far fa-thumbs-down"></i>: <%= ((no/total) * 100).round(2) %> %
+            </h4>
+          </div>
+        </div>
+
+        <div class="col-xs-12 col-md-7 text-center">
           <% if @product.reviews.blank? %>
           <div class="allreviews col-xs-12 col-md-12 text-center">
-          <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %>
-          </p>
-        </div>
+            <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %>
+            </p>
           </div>
-          <% else %>
-          <% @product.reviews.each do |review| %>
-           <div class="allreviews col-xs-12 col-md-12 text-center">
+        </div>
+        <% else %>
+        <% @product.reviews.each do |review| %>
+        <div data-aos="fade-in" class="allreviews col-xs-12 col-md-12 text-center">
           <%= render 'reviews/show', review: review %>
         </div>
-          <% end %>
-          <% end %>
-          <div class="allreviews col-xs-12 col-md-12 text-center">
+        <% end %>
+        <% end %>
+        <div data-aos="fade-in" class="allreviews col-xs-12 col-md-12 text-center">
           <%= render 'reviews/form', product: @product, review: @review %>
-        </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 </div>
 </div>
