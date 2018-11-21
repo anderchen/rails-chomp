@@ -54,7 +54,6 @@
 .card:hover {
     -webkit-animation: pulse 1s;
     animation: pulse 2s;
-    -webkit-filter: grayscale(100%);
-  filter: grayscale(100%);
+box-shadow: inset 0px -107px 77px -48px rgba(0,0,0,0.82);
 }
 
