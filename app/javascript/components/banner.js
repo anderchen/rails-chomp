@@ -2,8 +2,8 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["I am alergic to water", "I don't eat popcorn", "I Love food!", ],
-    typeSpeed: 40,
+    strings: ["Sou alérgico a...", "E a pipoca?", "Comida!", ],
+    typeSpeed: 70,
     loop: true,
 
   });

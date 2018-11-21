@@ -24,7 +24,7 @@
         <div class="row">
           <div class="col-xs-6">
             <%= f.input :password,
-            hint: "leave it blank if you don't want to change it",
+            hint: "Deixe em branco caso não queira mudar",
             required: false,
             input_html: { autocomplete: "new-password" } %>
           </div>
@@ -59,9 +59,9 @@
       <% end %>
     </div>
     <div class="col-xs-12 col-sm-8 col-sm-offset-2 form-login">
-      <h2>Cancel my account</h2>
+      <h2>Cancelar minha conta</h2>
 
-      <p><%= link_to "Cancel my account", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p><%= link_to "Cancelar minha conta", registration_path(resource_name), class: "btn btn-danger", data: { confirm: "Tem certeza?" }, method: :delete %></p>
     </div>
   </div>
 </div>
