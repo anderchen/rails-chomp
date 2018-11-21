@@ -22,7 +22,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # PUT /resource
   def update
     @user.user_restrictions.destroy_all
-    params[:user][:diet_ids].each do |diet_id|
+    params[:current_user][:diet_ids].each do |diet_id|
       if Diet.exists?(diet_id)
         user_restriction = UserRestriction.new(user: @user, diet: Diet.find(diet_id))
         @user.user_restrictions << user_restriction
