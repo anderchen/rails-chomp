@@ -1,6 +1,6 @@
 <% name = review.user.first_name + " " + review.user.last_name %>
 <% if review.approved == true  %>
-  <p><strong><%= link_to name, user_path(review.user) %> | Aprovado: <i class="far fa-thumbs-up"></i></strong><br><%= review.content %></p>
+  <p><strong><%= link_to name, user_path(review.user) %> | <i class="far fa-thumbs-up"></i></strong><br><%= review.content %></p>
 <% elsif review.approved == false %>
-  <p><strong><%= link_to name, user_path(review.user) %> |Aprovado: <i class="far fa-thumbs-down"></i></strong><br><%= review.content %></p>
+  <p><strong><%= link_to name, user_path(review.user) %> | <i class="far fa-thumbs-down"></i></strong><br><%= review.content %></p>
 <% end %>
