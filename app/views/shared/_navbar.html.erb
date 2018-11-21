@@ -63,14 +63,14 @@
         <%= text_field_tag :query,
         params[:query],
         class: "search-text",
-          placeholder: "Search for a product..." %>
+          placeholder: "Quero procurar..." %>
           <a class="search-btn">
             <i class="fa fa-search fa-lg search-icon"></i>
           </a>
           <% end %>
         </div>
         <div class="navbar-cards text-center align-items-center">
-          <%= link_to t(".new_product", default: "Suggest A Product"), new_product_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center navbutton" %>
+          <%= link_to t(".new_product", default: "Sugerir um produto"), new_product_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center navbutton" %>
         </div>
         <%#= link_to "Messages", "#", class: "navbar-wagon-item navbar-wagon-link navbar-cards" %>
 
@@ -109,7 +109,7 @@
               </li>
               <li>
                 <%= link_to edit_user_registration_path do %>
-                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Settings") %>
+                <i class="fa fa-cog"></i>  <%= t(".settings", default: "Configurações") %>
                 <% end %>
               </li>
               <li>
