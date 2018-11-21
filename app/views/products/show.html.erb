@@ -1,36 +1,38 @@
 <div class="product-contaier">
-<div class="container">
-<div class="row">
-  <div class="productimg col-xs-12 col-md-4 text-center">
-    <%= render 'shared/product_image_tag', product: @product %>
-  </div>
-    <div class="productinfo col-xs-12 col-md-8">
-      <h1 class="text-center"><%= @product.name %></h1>
-      <p class="text-center"><%= @product.brand %></p>
-      <h4>Restrições Alimentares:</h4>
-      <div class="diet-container">
-        <% @product.diets.each do |diet| %>
-          <div class="class-item">
-            <strong><%= diet.name %></strong>
-          </div>
-        <% end %>
+  <div class="container">
+    <div class="row">
+      <div class="productimg col-xs-12 col-md-4 text-center">
+        <%= render 'shared/product_image_tag', product: @product %>
       </div>
-      <h4>Ingredientes:</h4>
-      <p class="text-left"><small><%= @product.ingredients %></small></p>
+        <div class="productinfo col-xs-12 col-md-8">
+          <h1 class="text-center"><%= @product.name %></h1>
+          <p class="text-center"><%= @product.brand %></p>
+          <h4>Restrições Alimentares:</h4>
+          <div class="diet-container">
+            <% @product.diets.each do |diet| %>
+              <div class="class-item">
+                <strong><%= diet.name %></strong>
+              </div>
+            <% end %>
+          </div>
+          <h4>Ingredientes:</h4>
+          <p class="text-left"><small><%= @product.ingredients %></small></p>
+      </div>
+      <div class="reviews col-xs-12 col-md-12">
+          <h3 id="review-count">
+        <%= pluralize @product.reviews.size, "review" %>
+      </h3>
+      <% if @product.reviews.blank? %>
+        <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %></p>
+
+      <% else %>
+        <% @product.reviews.each do |review| %>
+          <%= render 'reviews/show', review: review %>
+        <% end %>
+      <% end %>
+      <%= render 'reviews/form', product: @product, review: @review %>
+      </div>
+      <%# raise %>
+    </div>
   </div>
-  <div class="reviews col-xs-12 col-md-12">
-      <h3 id="review-count">
-    <%= pluralize @product.reviews.size, "review" %>
-  </h3>
-  <% if @product.reviews.blank? %>
-    <p id="first_review_message">Seja o primeiro a deixar um review para <%= @product.name %></p>
-  <% else %>
-    <% @product.reviews.each do |review| %>
-      <%= render 'reviews/show', review: review %>
-    <% end %>
-  <% end %>
-  <%= render 'reviews/form', product: @product, review: @review %>
-  </div>
-</div>
-</div>
 </div>
