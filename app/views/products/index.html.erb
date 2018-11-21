@@ -2,8 +2,7 @@
   <div class="container" id="product-index">
     <div class="row">
       <div class="col-xs-12 col-sm-10 productscard">
-        <h1>Product List</h1>
-        <%= button_to 'Add a new product', new_product_path, class: 'btn btn-primary', method: :get %>
+        <h1>Lista de Produtos</h1>
         <% @products.each do |product| %>
         <div class="col-xs-12 col-sm-4 animated fadeIn slow">
           <div class="card" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= render 'shared/product_image_path', product: product%>);  background-size: 100% 100%;">

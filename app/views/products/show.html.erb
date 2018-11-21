@@ -24,7 +24,7 @@
             <% yes = @product.reviews.where(approved: true).count.to_f %>
             <% no = @product.reviews.where(approved: false).count.to_f %>
             <% total = @product.reviews.size %>
-            <%= pluralize @product.reviews.size, "review" %>
+            <%= pluralize @product.reviews.size, "review"%>
           </h3>
           <h4 id="thumbsup"><i class="far fa-thumbs-up"></i>: <%= ((yes/total) * 100).round(2) %> %</h4>
           <h4 id="thumbsdown"><i class="far fa-thumbs-down"></i>: <%= ((no/total) * 100).round(2) %> %</h4>

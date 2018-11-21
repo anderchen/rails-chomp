@@ -21,9 +21,31 @@ class Product < ApplicationRecord
 
   has_many :product_restrictions, dependent: :destroy
   has_many :diets, through: :product_restrictions
-  CATEGORIES = ["Vegetable", "Fruit", "Oils", "Meat", "Grains", "Fish", "Milk", "Eggs", "Ice-cream"].sort
+  CATEGORIES = ['Achocolatados',
+                'Aveia',
+                'Azeites, óleos e vinagres',
+                'Bebidas',
+                'Biscoitos',
+                'Café e chá',
+                'Carnes, aves e peixes',
+                'Cereais',
+                'Congelados e pratos prontos',
+                'Conservas e enlatados',
+                'Doces',
+                'Farinhas',
+                'Frutas',
+                'Grãos',
+                'Leite e derivados',
+                'Massas',
+                'Outros',
+                'Ovos',
+                'Pães, torradas e bolos',
+                'Sorvete',
+                'Temperos e Condimentos',
+                'Verduras e legumes']
 
   validates :name, presence: true
+  validates :brand, presence: true
   validates :ingredients, presence: true
   validates :user_id, presence: true
   validates :validation, default: false

@@ -12,18 +12,18 @@
           <h4 class="text-center"><%= @user.first_name %> <%= @user.last_name %></h4>
         </div>
         <div class="profile-card">
-          <h2 class="text-center">My Restrictions</h2>
+          <h2 class="text-center">Minhas Restrições</h2>
           <hr>
           <% @user.diets.each do |diet| %>
           <div class="restrictioncard">
             <div class="col restrictionicon">
-            </div><%= diet.name %>
+            </div><p><%= diet.name %></p>
           </div>
           <% end %>
         </div>
       </div>
       <div class="col-xs-12 col-sm-6 col-sm-offset-1 profile-card">
-        <h2 class="text-center">My Reviews</h2>
+        <h2 class="text-center">Minhas Resenhas</h2>
         <hr>
         <% @user.reviews.each do |review| %>
         <h4><%= review.product.name %></h4>
