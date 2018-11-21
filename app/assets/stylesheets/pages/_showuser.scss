@@ -62,8 +62,8 @@
 
 .restrictionicon {
   display: flex;
-  height: 50px;
-  width: 50px;
+  min-height: 50px;
+  min-width: 50px;
   background-color: #FF9090;
   border-radius: 50%;
   font-size: 17px;
@@ -78,19 +78,19 @@
 }
 
 .restrictiontext {
-  font-size: 13px;
+  flex: 0 0;
+  font-size: 16px;
   font-weight: lighter;
   font-family: 'Exo';
-  margin-left: 10px;
-  position: absolute;
-  left: auto;
+  margin: 0;
+  justify-self: end;
   color: #333333;
 }
 
 .reviewicon {
   display: flex;
-  height: 60px;
-  width: 60px;
+  min-height: 60px;
+  min-width: 60px;
   background-color: #74AD7A;
   border-radius: 50%;
   font-size: 25px;
@@ -101,4 +101,21 @@
   font-weight: bold;
   align-items: center;
   position: center;
+
+}
+
+.reviewbad {
+  background-color: #FF9090;
+}
+
+.reviewtextcontainer {
+  flex: 1 0 80%;
+  text-align: center;
+}
+
+.reviewtext {
+  margin-left: 10px;
+  margin-bottom: 0;
+  display: flex;
+  justify-content: center;
 }
