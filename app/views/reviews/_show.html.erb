@@ -1,2 +1,5 @@
-<p><strong>Aprovado: <%= review.approved %></strong><br>  <%= review.content %></p>
-
+<% if review.approved == true  %>
+  <p><strong>Aprovado: <i class="far fa-thumbs-up"></i></strong><br><%= review.content %></p>
+<% elsif review.approved == false %>
+  <p><strong>Aprovado: <i class="far fa-thumbs-down"></i></strong><br><%= review.content %></p>
+<% end %>
