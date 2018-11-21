@@ -1,8 +1,11 @@
 .card {
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   color: white;
   position: relative;
+  border-radius: 5px;
+  a {
+  opacity: 0 !important;
+  }
 }
 
 .card-user {
@@ -46,3 +49,5 @@
 .card-link:hover {
   opacity: 0.1;
 }
+
+
