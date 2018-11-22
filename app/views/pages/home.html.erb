@@ -4,16 +4,42 @@
       <span id="banner-typed-text"></span>
     </h3>
 <!--     <input class="animated bounceInDown slow" type="text" placeholder="Search for a product..."> -->
-    <%= form_tag products_path, method: :get do %>
-      <%= text_field_tag :query,
-          params[:query],
-          class: "form-control animated bounceInDown slow",
-          placeholder: "Quero procurar..." %>
-    <% end %>
-    <p class="animated fadeIn delay-1s">Produtos Populares</p>
-    <%= link_to 'Mortadela', products_path, class: 'btn animated fadeIn delay-2s'  %>
-    <%= link_to 'Palmito', products_path, class: 'btn animated fadeIn delay-2s'  %>
-    <%= link_to 'Coca-Cola', products_path, class: 'btn animated fadeIn delay-2s'  %>
+    <div>
+      <%= form_tag products_path, method: :get do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control animated bounceInDown slow",
+            placeholder: "Quero procurar..." %>
+      <% end %>
+    </div>
+    <p class="animated fadeIn delay-1s">Categorias</p>
+    <% categories = ['Achocolatados',
+                'Aveia',
+                'Azeites, óleos e vinagres',
+                'Bebidas',
+                'Biscoitos',
+                'Café e chá',
+                'Carnes, aves e peixes',
+                'Cereais',
+                'Congelados e pratos prontos',
+                'Conservas e enlatados',
+                'Doces',
+                'Farinhas',
+                'Frutas',
+                'Grãos',
+                'Leite e derivados',
+                'Massas',
+                'Outros',
+                'Ovos',
+                'Pães, torradas e bolos',
+                'Sorvete',
+                'Temperos e Condimentos',
+                'Verduras e legumes'] %>
+    <div class="category">
+      <% categories.sample(5).each do |category| %>
+        <%= link_to category, {controller: "products", action: "index", query: category}, class: 'btn animated fadeIn delay-2s category-btn'  %>
+      <% end %>
+    </div>
   </div>
 </div>
 
