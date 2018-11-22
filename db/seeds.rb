@@ -1,78 +1,78 @@
 require 'open-uri'
 require 'nokogiri'
 
-# # UNCOMMENT EACH ONE OF THE SEEDS TO WORK!!
+# UNCOMMENT EACH ONE OF THE SEEDS TO WORK!!
 
-# puts "Creating diets...."
+puts "Creating diets...."
 
-# diets = [['Leite', "iconsvg icon-leite"],
-#          ['Ovos', "iconsvg icon-ovos"],
-#          ['Peixe', "iconsvg icon-peixe"],
-#          ['Crustáceo', "iconsvg icon-crustaceo"],
-#          ['Nozes', "iconsvg icon-nozes"],
-#          ['Amendoim', "iconsvg icon-amendoim"],
-#          ['Trigo', "iconsvg icon-trigo"],
-#          ['Soja', "iconsvg icon-soja"],
-#          ['Carne', "iconsvg icon-carne"],
-#          ['Gluten', "iconsvg icon-gluten"],
-#          ['Traços de Leite', "iconsvg icon-leite"],
-#          ['Traços de Ovos', "iconsvg icon-ovos"],
-#          ['Traços de Peixe', "iconsvg icon-peixe"],
-#          ['Traços de Crustáceo', "iconsvg icon-crustaceo"],
-#          ['Traços de Nozes', "iconsvg icon-nozes"],
-#          ['Traços de Amendoim', "iconsvg icon-amendoim"],
-#          ['Traços de Trigo', "iconsvg icon-trigo"],
-#          ['Traços de Soja', "iconsvg icon-soja"],
-#          ['Traços de Carne', "iconsvg icon-carne"],
-#          ['Traços de Gluten', "iconsvg icon-gluten"]]
-# diets.each do |category|
-#   diet = Diet.new
-#   diet.name = category[0]
-#   diet.icon = category[1]
-#   diet.save!
+diets = [['Leite', "iconsvg icon-leite"],
+         ['Ovos', "iconsvg icon-ovos"],
+         ['Peixe', "iconsvg icon-peixe"],
+         ['Crustáceo', "iconsvg icon-crustaceo"],
+         ['Nozes', "iconsvg icon-nozes"],
+         ['Amendoim', "iconsvg icon-amendoim"],
+         ['Trigo', "iconsvg icon-trigo"],
+         ['Soja', "iconsvg icon-soja"],
+         ['Carne', "iconsvg icon-carne"],
+         ['Gluten', "iconsvg icon-gluten"],
+         ['Traços de Leite', "iconsvg icon-leite"],
+         ['Traços de Ovos', "iconsvg icon-ovos"],
+         ['Traços de Peixe', "iconsvg icon-peixe"],
+         ['Traços de Crustáceo', "iconsvg icon-crustaceo"],
+         ['Traços de Nozes', "iconsvg icon-nozes"],
+         ['Traços de Amendoim', "iconsvg icon-amendoim"],
+         ['Traços de Trigo', "iconsvg icon-trigo"],
+         ['Traços de Soja', "iconsvg icon-soja"],
+         ['Traços de Carne', "iconsvg icon-carne"],
+         ['Traços de Gluten', "iconsvg icon-gluten"]]
+diets.each do |category|
+  diet = Diet.new
+  diet.name = category[0]
+  diet.icon = category[1]
+  diet.save!
+end
+
+puts "Diets created!!"
+
+## -----------------------------------------------------------
+
+# # Getting Ben and Jerry's products
+# puts "Adding Ben and Jerry's to products...."
+# # Getting the href of each product
+# url_index = 'https://www.benandjerry.com.br/sabores/potes'
+# html_file_index = open(url_index).read
+# html_doc_index = Nokogiri::HTML(html_file_index)
+
+# flavor_href = []
+
+# html_doc_index.search(".landing-item").each do | element|
+#   flavor_href << element.attribute('href').value
 # end
 
-# puts "Diets created!!"
 
-#-----------------------------------------------------------
+# # Seeding the database with each product info
+# flavor_href.each do |href|
+#   url_flavor = "https://www.benandjerry.com.br#{href}"
+#   html_file_flavor = open(url_flavor).read
+#   html_doc_flavor = Nokogiri::HTML(html_file_flavor)
 
-# Getting Ben and Jerry's products
-puts "Adding Ben and Jerry's to products...."
-# Getting the href of each product
-url_index = 'https://www.benandjerry.com.br/sabores/potes'
-html_file_index = open(url_index).read
-html_doc_index = Nokogiri::HTML(html_file_index)
+#   puts "Going in #{href}..."
 
-flavor_href = []
+#   html_doc_flavor.search(".content").each do |element|
+#     product = Product.new
+#     product.brand = "Ben and Jerry's"
+#     product.category = "Ice-cream"
+#     product.user_id = 1
+#     product.name = element.css("h1[itemprop=name]").text.strip
+#     product.ingredients = element.css(".package-ingredients").text.strip
+#     product.traces = element.css(".package-allergy_info").text.strip
+#     product.save!
+#   end
+# end
 
-html_doc_index.search(".landing-item").each do | element|
-  flavor_href << element.attribute('href').value
-end
+# puts "Ben and Jerry's successfully added!"
 
-
-# Seeding the database with each product info
-flavor_href.each do |href|
-  url_flavor = "https://www.benandjerry.com.br#{href}"
-  html_file_flavor = open(url_flavor).read
-  html_doc_flavor = Nokogiri::HTML(html_file_flavor)
-
-  puts "Going in #{href}..."
-
-  html_doc_flavor.search(".content").each do |element|
-    product = Product.new
-    product.brand = "Ben and Jerry's"
-    product.category = "Ice-cream"
-    product.user_id = 1
-    product.name = element.css("h1[itemprop=name]").text.strip
-    product.ingredients = element.css(".package-ingredients").text.strip
-    product.traces = element.css(".package-allergy_info").text.strip
-    product.save!
-  end
-end
-
-puts "Ben and Jerry's successfully added!"
-
-# #--------------------------------------------------------------------------------
+# # #--------------------------------------------------------------------------------
 
 # Getting Taeq's products
 puts "Adding Taeq to products...."
