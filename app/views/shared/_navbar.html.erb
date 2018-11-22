@@ -30,7 +30,6 @@
             <% end %>
           </ul>
         </div>
-
       </div>
       <div class="navbar-cards text-center align-items-center search-box-collapse hidden-xs hidden-sm">
         <%= form_tag products_path, method: :get do %>
@@ -98,6 +97,19 @@
 
       <% else %>
       <!-- Login link (when logged out) -->
+
+      <div class="navbar-cards text-center align-items-center search-box-collapse hidden-xs hidden-sm">
+        <%= form_tag products_path, method: :get do %>
+          <%= text_field_tag :query,
+          params[:query],
+          class: "search-text",
+          id: "search-field",
+          placeholder: "Quero procurar..." %>
+          <a class="search-btn">
+            <i class="fa fa-search fa-lg search-icon"></i>
+          </a>
+        <% end %>
+        </div>
         <div class="navbar-cards">
           <%= link_to t(".sign_in", default: "LOGIN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link text-center align-items-center navbutton" %>
         </div>
