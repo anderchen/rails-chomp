@@ -36,8 +36,10 @@
                 'Temperos e Condimentos',
                 'Verduras e legumes'] %>
     <div class="category">
-      <% categories.sample(5).each do |category| %>
+      <% categories.sample(6).each do |category| %>
+        <% if category.size < 20 %>
         <%= link_to category, {controller: "products", action: "index", query: category}, class: 'btn animated fadeIn delay-2s category-btn'  %>
+        <% end %>
       <% end %>
     </div>
   </div>
