@@ -46,8 +46,8 @@
                 <% yes = @product.reviews.where(approved: true).count.to_f %>
                 <% no = @product.reviews.where(approved: false).count.to_f %>
                 <% total = @product.reviews.size %>
-                <%= pluralize @product.reviews.size, "" %>
-                <h4>Reviews</h4>
+                <%= @product.reviews.size %>
+                <h4><%= "review".pluralize(@product.reviews.size) %></h4>
               </div>
             </div>
           </h3>
