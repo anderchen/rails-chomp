@@ -42,15 +42,16 @@
    display: inline-block;
 }
 
-.footer .fab {
-  color: #FF9090;
-  margin-right: 2vw;
-}
 
 .footer .fab:hover {
     opacity: 0.2;
 }
 
 .footer-copyright {
-
+    align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  p {
+    font-size: 15px;
+  }
 }
