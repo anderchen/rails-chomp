@@ -1,0 +1,14 @@
+.fourzerofour {
+  color: white;
+  text-align: center;
+  height: calc(100vh - 70px - 50px);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/59523/pexels-photo-59523.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 60px;
+  }
+}
