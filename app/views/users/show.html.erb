@@ -17,7 +17,7 @@
           <% @user.diets.each do |diet| %>
           <div data-aos="fade-in" class="restrictioncard">
             <div class="col restrictionicon">
-            </div><p><%= diet.name %></p>
+            </div><p class="restrictiontext"><%= diet.name %></p>
           </div>
           <% end %>
         </div>
@@ -27,13 +27,23 @@
         <hr>
         <% @user.reviews.each do |review| %>
         <h4><%= review.product.name %></h4>
-          <div data-aos="fade-in" class="reviewcard">
-            <br>
-            <div class="reviewicon"><%= review.approved %></div>&nbsp;&nbsp;&nbsp;<%= review.content %>
+        <div data-aos="fade-in" class="reviewcard">
+          <br>
+          <div class="reviewicon <%= 'reviewbad' unless review.approved %>">
+            <i class=<% if review.approved %>
+              "far fa-thumbs-up"
+              <% else %>
+              "far fa-thumbs-down"
+              <% end %>>
+            </i>
           </div>
+          <div class="reviewtextcontainer">
+            <p class="reviewtext"><%= review.content %></p>
+          </div>
+        </div>
         <% end %>
-      <br>
+        <br>
+      </div>
     </div>
   </div>
-</div>
 </div>
