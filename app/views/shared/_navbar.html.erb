@@ -21,41 +21,13 @@
         <div class="dropdown">
           <i class="fas fa-utensils dropdown-toggle fa-2x foodbutton" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <% Diet.all.each do |diet| %>
             <li>
-              <%= link_to user_path(current_user) do %>
-              <%= t(".nb", default: "Amendoim") %>
+              <%= link_to products_path do %>
+              <%= t(".nb", default: "#{diet.name}") %>
               <% end %>
             </li>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-              <%= t(".nb", default: "Leite") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-              <%= t(".nb", default: "Ovo") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-              <%= t(".nb", default: "Trigo") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-              <%= t(".nb", default: "Soja") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-              <%= t(".nb", default: "Peixe") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to edit_user_registration_path do %>
-              <%= t(".nb", default: "Crustáceo") %>
-              <% end %>
-            </li>
+            <% end %>
           </ul>
         </div>
 
