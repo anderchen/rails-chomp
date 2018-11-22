@@ -1,9 +1,15 @@
 function expandSearchBarOnClick(){
-  const toggleSearchBar = (event) => {
-    event.currentTarget.classList.toggle("search-box-expand")
+  const searchField = document.querySelector(".search-box-collapse");
+
+  const addSearchBar = (event) => {
+    // event.preventDefault();
+    searchField.classList.toggle("search-box-expand");
+    searchField.classList.toggle("search-box-collapse");
+    searchField.focus();
   }
-  const searchBoxCollapse = document.querySelector(".search-box-collpase");
-  searchBoxCollapse.addEventListener("click", toggleSearchBar);
+
+  const searchBoxExpand = document.querySelector(".search-btn");
+  searchBoxExpand.addEventListener("click", addSearchBar);
 }
 
 export { expandSearchBarOnClick };
