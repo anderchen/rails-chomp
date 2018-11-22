@@ -23,7 +23,7 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <% Diet.all.each do |diet| %>
             <li>
-              <%= link_to user_path(current_user) do %>
+              <%= link_to products_path do %>
               <%= t(".nb", default: "#{diet.name}") %>
               <% end %>
             </li>

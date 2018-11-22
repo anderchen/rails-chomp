@@ -37,7 +37,7 @@
                 'Verduras e legumes'] %>
     <div class="category">
       <% categories.sample(5).each do |category| %>
-        <%= link_to category, products_path, class: 'btn animated fadeIn delay-2s category-btn'  %>
+        <%= link_to category, {controller: "products", action: "index", query: category}, class: 'btn animated fadeIn delay-2s category-btn'  %>
       <% end %>
     </div>
   </div>
