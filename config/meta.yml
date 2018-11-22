@@ -1,0 +1,9 @@
+# config/meta.yml
+
+meta_product_name: "Chomp"
+meta_title: "Chomp | Encontre o produto certo para as suas restrições alimentares"
+meta_description: "Crie um perfil e informe quais são as suas restrições alimentares.
+Nossa busca automaticamente mostrará os produtos que atendem às restrições informadas.
+Você também pode sugerir um novo produto caso não o encontre na busca."
+meta_image: "cover.png"                       # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
