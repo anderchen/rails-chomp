@@ -8,7 +8,7 @@ function addReview(reviewHTML) {
   const reviews = document.getElementById('new_review');
   reviews.insertAdjacentHTML('beforebegin', reviewHTML);
   // document.getElementById('first_review_message').remove();
-  document.getElementById('review-count').innerHTML = "<%= pluralize @product.reviews.size, 'review' %>"
+  // document.getElementById('reviewegg').innerHTML = "<%= pluralize @product.reviews.size, '<h4>review</h4>' %>"
   // Update review number
 }
 
