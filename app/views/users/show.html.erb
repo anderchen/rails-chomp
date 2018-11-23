@@ -35,7 +35,7 @@
         <h2 class="text-center">Minhas Resenhas</h2>
         <hr>
         <% @user.reviews.each do |review| %>
-        <h4><%= review.product.name %></h4>
+        <h4><%= link_to review.product.name, product_path(review.product) %></h4>
         <div data-aos="fade-in" class="reviewcard">
           <br>
           <div class="reviewicon <%= 'reviewbad' unless review.approved %>">
