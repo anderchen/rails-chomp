@@ -19,7 +19,13 @@
           <hr>
           <% @user.diets.each do |diet| %>
           <div data-aos="fade-in" class="restrictioncard">
-            <div class="col restrictionicon">
+            <div class="col
+            <% if diet.name.include?('Traços') %>
+            <%=  'restrictionicon-yellow'%>
+            <% else %>
+            <%= 'restrictionicon-red' %>
+            <% end %>">
+              <i class="<%= diet.icon %>" id="user-icon"></i>
             </div><p class="restrictiontext"><%= diet.name %></p>
           </div>
           <% end %>
