@@ -60,11 +60,29 @@
   min-height: 80px;
 }
 
-.restrictionicon {
+.restrictionicon-red {
   display: flex;
   min-height: 50px;
   min-width: 50px;
   background-color: #FF9090;
+  border-radius: 50%;
+  font-size: 17px;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  font-family: 'Roboto';
+  font-weight: bold;
+  align-items: center;
+  position: absolute;
+  left: 10px;
+}
+
+
+.restrictionicon-yellow {
+  display: flex;
+  min-height: 50px;
+  min-width: 50px;
+  background-color: #FFC56D;
   border-radius: 50%;
   font-size: 17px;
   color: white;
@@ -118,4 +136,8 @@
   margin-bottom: 0;
   display: flex;
   justify-content: center;
+}
+
+#user-icon {
+  font-size: 20px;
 }
